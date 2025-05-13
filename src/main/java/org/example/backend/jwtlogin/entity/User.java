@@ -17,8 +17,10 @@ public class User {
     @Column(unique = true)
     private String username;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String nickname;
 
     public User(String username, String password, String nickname) {
