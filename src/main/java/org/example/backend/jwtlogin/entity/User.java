@@ -19,8 +19,11 @@ public class User {
 
     private String password;
 
-    public User(String username, String password) {
+    private String nickname;
+
+    public User(String username, String password, String nickname) {
         this.username = username;
         this.password = password;
+        this.nickname = nickname;
     }
 }
