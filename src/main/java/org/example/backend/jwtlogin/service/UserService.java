@@ -3,9 +3,11 @@ package org.example.backend.jwtlogin.service;
 import lombok.RequiredArgsConstructor;
 import org.example.backend.jwtlogin.Repository.UserRepository;
 import org.example.backend.jwtlogin.dto.LoginRequest;
+import org.example.backend.jwtlogin.dto.ProfileResponse;
 import org.example.backend.jwtlogin.dto.SignupRequest;
 import org.example.backend.jwtlogin.entity.User;
 import org.example.backend.jwtlogin.security.JwtTokenProvider;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,5 +39,18 @@ public class UserService {
         }
 
         return JwtTokenProvider.createToken(user.getUsername());
+    }
+
+    @Transactional(readOnly = true)
+    public ProfileResponse getProfile() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("존재하지 않는 회원입니다."));
+
+        return new ProfileResponse(
+                user.getUsername(),
+                user.getNickname()
+        );
     }
 }
