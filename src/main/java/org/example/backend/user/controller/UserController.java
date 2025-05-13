@@ -1,8 +1,8 @@
-package org.example.backend.jwtlogin.controller;
+package org.example.backend.user.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.backend.jwtlogin.dto.ProfileResponse;
-import org.example.backend.jwtlogin.service.UserService;
+import org.example.backend.user.dto.ProfileResponse;
+import org.example.backend.user.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

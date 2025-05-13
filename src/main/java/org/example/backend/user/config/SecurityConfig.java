@@ -1,8 +1,8 @@
-package org.example.backend.jwtlogin.config;
+package org.example.backend.user.config;
 
 import lombok.RequiredArgsConstructor;
-import org.example.backend.jwtlogin.Repository.UserRepository;
-import org.example.backend.jwtlogin.security.JwtAuthenticationFilter;
+import org.example.backend.user.repository.UserRepository;
+import org.example.backend.user.security.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

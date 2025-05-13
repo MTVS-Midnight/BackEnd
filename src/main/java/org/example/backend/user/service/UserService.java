@@ -1,12 +1,12 @@
-package org.example.backend.jwtlogin.service;
+package org.example.backend.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.backend.jwtlogin.Repository.UserRepository;
-import org.example.backend.jwtlogin.dto.LoginRequest;
-import org.example.backend.jwtlogin.dto.ProfileResponse;
-import org.example.backend.jwtlogin.dto.SignupRequest;
-import org.example.backend.jwtlogin.entity.User;
-import org.example.backend.jwtlogin.security.JwtTokenProvider;
+import org.example.backend.user.repository.UserRepository;
+import org.example.backend.user.dto.LoginRequest;
+import org.example.backend.user.dto.ProfileResponse;
+import org.example.backend.user.dto.SignupRequest;
+import org.example.backend.user.entity.User;
+import org.example.backend.user.security.JwtTokenProvider;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

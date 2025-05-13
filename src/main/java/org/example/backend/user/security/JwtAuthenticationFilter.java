@@ -1,11 +1,11 @@
-package org.example.backend.jwtlogin.security;
+package org.example.backend.user.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.example.backend.jwtlogin.Repository.UserRepository;
-import org.example.backend.jwtlogin.entity.User;
+import org.example.backend.user.repository.UserRepository;
+import org.example.backend.user.entity.User;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;

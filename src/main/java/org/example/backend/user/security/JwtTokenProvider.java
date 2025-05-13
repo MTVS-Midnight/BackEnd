@@ -1,4 +1,4 @@
-package org.example.backend.jwtlogin.security;
+package org.example.backend.user.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

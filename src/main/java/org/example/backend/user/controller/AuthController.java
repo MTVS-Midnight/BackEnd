@@ -1,9 +1,9 @@
-package org.example.backend.jwtlogin.controller;
+package org.example.backend.user.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.example.backend.jwtlogin.dto.LoginRequest;
-import org.example.backend.jwtlogin.dto.SignupRequest;
-import org.example.backend.jwtlogin.service.UserService;
+import org.example.backend.user.dto.LoginRequest;
+import org.example.backend.user.dto.SignupRequest;
+import org.example.backend.user.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

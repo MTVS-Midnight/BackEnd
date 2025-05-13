@@ -1,7 +1,6 @@
-package org.example.backend.jwtlogin.entity;
+package org.example.backend.user.entity;
 
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
