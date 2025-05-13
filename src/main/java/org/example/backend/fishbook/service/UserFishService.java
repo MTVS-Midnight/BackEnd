@@ -31,6 +31,7 @@ public class UserFishService {
                         caughtIds.contains(fish.getId())
                 )).toList();
     }
+
     //물고기 도감 상세 조회
     @Transactional(readOnly = true)
     public FishBook getFishDetails(Long userId, Long fishId) {

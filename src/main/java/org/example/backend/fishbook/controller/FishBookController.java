@@ -6,7 +6,9 @@ import org.example.backend.fishbook.entity.FishBook;
 import org.example.backend.fishbook.repository.FishBookRepository;
 import org.example.backend.fishbook.repository.UserFishRepository;
 import org.example.backend.fishbook.service.UserFishService;
+import org.example.backend.user.entity.User;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +24,8 @@ public class FishBookController {
 
     // 1. 물고기 도감 전체 조회
     @GetMapping
-    public ResponseEntity<List<FishBookResponse>> getFishBook(@RequestParam Long userId) {
-        List<FishBookResponse> fishBook = userFishService.getUserFishBook(userId);
+    public ResponseEntity<List<FishBookResponse>> getFishBook(@AuthenticationPrincipal User user) {
+        List<FishBookResponse> fishBook = userFishService.getUserFishBook(user.getId());
         return ResponseEntity.ok(fishBook);
     }
 
@@ -31,8 +33,8 @@ public class FishBookController {
     @GetMapping("/{fishId}")
     public ResponseEntity<FishBook> getFishDetails(
             @PathVariable Long fishId,
-            @RequestParam Long userId) {
-        FishBook fishDetails = userFishService.getFishDetails(userId, fishId);
+            @AuthenticationPrincipal User user) {
+        FishBook fishDetails = userFishService.getFishDetails(user.getId(), fishId);
         return ResponseEntity.ok(fishDetails);
     }
 
