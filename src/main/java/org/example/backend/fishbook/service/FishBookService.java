@@ -36,7 +36,7 @@ public class FishBookService {
 
     // 물고기 도감 상세 조회
     @Transactional(readOnly = true)
-    public FishBookDetailResponse getFishDetails(Long fishId) {
+    public FishBookDetailResponse getFishDetails(long fishId) {
         FishStatus fishStatus = fishStatusRepository.findByFishBookId(fishId)
                 .orElseThrow(() -> new RuntimeException("해당 물고기를 찾을 수 없습니다."));
 
@@ -56,7 +56,7 @@ public class FishBookService {
 
     // 임시 테스트용 물고기 도감 해금
     @Transactional
-    public void unlockFish(Long fishId) {
+    public void unlockFish(long fishId) {
         FishStatus fishStatus = fishStatusRepository.findByFishBookId(fishId)
                 .orElseThrow(() -> new RuntimeException("물고기를 찾을 수 없습니다."));
 
