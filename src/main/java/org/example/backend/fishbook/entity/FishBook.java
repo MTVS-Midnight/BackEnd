@@ -22,9 +22,13 @@ public class FishBook {
     @Column(nullable = false)
     private String description;
 
-    public FishBook(String name, String habitat, String description) {
+    @Column(nullable = false)
+    private String imageUrl;
+
+    public FishBook(String name, String habitat, String description, String imageUrl) {
         this.name = name;
         this.habitat = habitat;
         this.description = description;
+        this.imageUrl = imageUrl;
     }
 }

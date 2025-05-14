@@ -5,8 +5,10 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class FishBookResponse {
+public class FishBookDetailResponse {
     private long id;
     private String name;
-    private boolean caught;
+    private String habitat;
+    private String description;
+    private String imageUrl;
 }
