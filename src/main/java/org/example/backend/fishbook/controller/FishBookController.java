@@ -59,7 +59,7 @@ public class FishBookController {
     @PostMapping("/unlock")
     public ResponseEntity<Map<String, String>> unlockFish(@RequestBody UnlockRequest request) {
         fishBookService.unlockFish(request.fishId());
-        return ResponseEntity.ok(Map.of("message", "Fish unlocked successfully"));
+        return ResponseEntity.ok(Map.of("message", "물고기가 해금되었습니다"));
     }
     // 요청 DTO
     record UnlockRequest(Long fishId) {}
